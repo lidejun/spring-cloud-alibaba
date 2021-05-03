@@ -61,6 +61,36 @@ public class NacosDataSourceProperties extends AbstractDataSourceProperties {
 					"spring.cloud.sentinel.datasource.nacos.server-addr",
 					"localhost:8848");
 		}
+		if (StringUtils.isEmpty(username)) {
+			username = this.getEnv().getProperty(
+					"spring.cloud.sentinel.datasource.nacos.username",
+					"");
+		}
+		if (StringUtils.isEmpty(password)) {
+			password = this.getEnv().getProperty(
+					"spring.cloud.sentinel.datasource.nacos.password",
+					"");
+		}
+		if (StringUtils.isEmpty(endpoint)) {
+			endpoint = this.getEnv().getProperty(
+					"spring.cloud.sentinel.datasource.nacos.endpoint",
+					"");
+		}
+		if (StringUtils.isEmpty(accessKey)) {
+			accessKey = this.getEnv().getProperty(
+					"spring.cloud.sentinel.datasource.nacos.access-key",
+					"");
+		}
+		if (StringUtils.isEmpty(secretKey)) {
+			secretKey = this.getEnv().getProperty(
+					"spring.cloud.sentinel.datasource.nacos.secret-key",
+					"");
+		}
+		if(StringUtils.isEmpty(namespace)) {
+			namespace = this.getEnv().getProperty(
+					"spring.cloud.sentinel.datasource.nacos.namespace",
+					"");
+		}
 	}
 
 	public String getServerAddr() {
